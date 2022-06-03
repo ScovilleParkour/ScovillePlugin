@@ -137,6 +137,7 @@ public class Course extends ScovilleObject {
     public void join(Player p) {
 
         ScovillePlayer sp = ScovillePlayer.getPlayer(p);
+        if (sp == null) return;
         sp.stopSong();
         sp.setCurrentlyPlaying(this.getUuid());
         if (!sp.hasPlayed(this.getUuid())) {
@@ -184,11 +185,6 @@ public class Course extends ScovilleObject {
             player.removeStartTime(this.getUuid());
             if (this.getLeaderboardTimes().getOrDefault(p.getUniqueId(), totalTime) >= totalTime)
                 this.addLeaderboardTime(p.getUniqueId(), totalTime);
-        }
-
-        if (!player.hasRatedCourse(this.getUuid())) {
-            RateInventory rateInventory = new RateInventory(p, this.getUuid());
-            rateInventory.openInventory();
         }
 
         ModifiedWinMessage modifiedWinMessage = player.getWinMessage() == null ? new ModifiedWinMessage() : player.getWinMessage();
@@ -271,7 +267,13 @@ public class Course extends ScovilleObject {
 
         this.save();
 
-        Bukkit.getScheduler().runTaskLater(ScovillePlugin.getInstance(), () -> p.performCommand("l"), 3L);
+        Bukkit.getScheduler().runTaskLater(ScovillePlugin.getInstance(), () -> {
+            p.performCommand("l");
+            if (!player.hasRatedCourse(this.getUuid())) {
+                RateInventory rateInventory = new RateInventory(p, this.getUuid());
+                rateInventory.openInventory();
+            }
+        }, 3L);
 
     }
 
