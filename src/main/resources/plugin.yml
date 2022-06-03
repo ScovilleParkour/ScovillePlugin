@@ -1,0 +1,54 @@
+name: Scovilleplugin
+version: ${project.version}
+main: com.uhmily.scovilleplugin.ScovillePlugin
+api-version: 1.12.2
+prefix: Scoville
+depend: [ ProtocolLib, Citizens ]
+softdepend: [ Multiverse-Core, Multiverse-Inventories, PlotSquared, PlaceholderAPI ]
+authors: [ Uhmily ]
+description: The Main Plugin for the Scoville Parkour Server
+
+commands:
+  pk:
+    description: Main Command
+  l:
+    description: Lobby Command
+    aliases: ["lobby"]
+  listdata:
+    description: List Data
+  setlang:
+    description: Set language
+  join:
+    description: Join Command
+  altjoin:
+    description: Set Alt Join Command
+  lb:
+    description: Leaderboard Command
+    aliases: ["leaderboard"]
+  playing:
+    description: Playing Command
+  joinplayer:
+    description: JoinPlayer Command
+  radio:
+    description: Radio Command
+  myrank:
+    description: MyRank Command
+  nv:
+    description: NV Command
+  practice:
+    description: Practice Command
+    aliases: ["prac"]
+  tag:
+    description: Tag Command
+  hotbar:
+    description: Hotbar Command
+  gethotbar:
+    description: GetHotbar Command
+  help:
+    description: Help Command
+  rules:
+    description: Rules Command
+  tutorial:
+    description: Tutorial Command
+  hub:
+    description: Hub Command

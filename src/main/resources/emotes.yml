@@ -1,0 +1,33 @@
+smile:
+  "replace": ":smile:"
+  "with": "&e\u263a"
+frown:
+  "replace": ":frown:"
+  "with": "&9\u2639"
+heart:
+  "replace": ":heart:"
+  "with": "&c\u2764"
+gg:
+  "replace": ":gg:"
+  "with": "&2&lG&a&lG&f&l!"
+rip:
+  "replace": ":rip:"
+  "with": "&8&lR&7&lI&f&lP"
+win:
+  "replace": ":win:"
+  "with": "&a&lWIN &2&l\u2714"
+fail:
+  "replace": ":fail:"
+  "with": "&c&lFAIL &4&l\u2718"
+tableflip:
+  "replace": ":tableflip:"
+  "with": "&e(\u256F&f°&e\u25A1&f°&e)\u256F&7\uFE35&6\u253B\u2501\u253B"
+shrug:
+  "replace": ":shrug:"
+  "with": "&e¯\\_(\u30C4)_/¯"
+pog:
+  "replace": ":pog:"
+  "with": "&c\u30FD&6(&e°&a\u3007&b°&d)&5\uFF89"
+owo:
+  "replace": ":owo:"
+  "with": "&e\u2055&6\u272D&e\u2055 &d\\(&e☆&d\u03C9&e☆&d)/ &e\u2055&6\u272D&e\u2055"
