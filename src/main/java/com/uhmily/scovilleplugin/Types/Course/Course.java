@@ -3,6 +3,8 @@ package com.uhmily.scovilleplugin.Types.Course;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
+import com.uhmily.scovilleplugin.Events.CourseJoinEvent;
 import com.uhmily.scovilleplugin.GUI.Inventories.RateInventory;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.ItemHelper;
@@ -166,7 +168,10 @@ public class Course extends ScovilleObject {
         sp.setPracticing(false);
         sp.save();
 
-        if (sp.getCheckpoints().containsKey(this.getUuid()))
+        CourseJoinEvent courseJoinEvent = new CourseJoinEvent(this, p);
+        Bukkit.getPluginManager().callEvent(courseJoinEvent);
+
+        if (sp.getCheckpoints().containsKey(this.getUuid()) && sp.isStartAtCP())
             p.teleport(sp.getCheckpoint(this.getUuid()));
         else
             p.teleport(this.startLoc);
@@ -266,6 +271,9 @@ public class Course extends ScovilleObject {
         player.setCheckpoint(this.getUuid(), this.getStartLoc());
 
         this.save();
+
+        CourseCompleteEvent courseCompleteEvent = new CourseCompleteEvent(this, p, totalTime == 0 ? Optional.empty() : Optional.of(totalTime));
+        Bukkit.getPluginManager().callEvent(courseCompleteEvent);
 
         Bukkit.getScheduler().runTaskLater(ScovillePlugin.getInstance(), () -> {
             p.performCommand("l");

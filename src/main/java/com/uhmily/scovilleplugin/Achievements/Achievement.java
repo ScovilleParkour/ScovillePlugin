@@ -53,32 +53,13 @@ public abstract class Achievement<T> extends ScovilleObject implements Listener 
     @EventHandler
     public abstract void trigger(T event);
 
-    public ItemStack getMenuItem(Player p) {
-        if (ScovillePlayer.getPlayer(p).hasAchievement(this)) {
-            return ItemHelper.createItem(getAchievementDiff().getColor() + "" + ChatColor.BOLD + ChatHelper.format(getName(), p), getSkullURL(), getLore(p));
-        } else {
-            return ItemHelper.createItem(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ChatHelper.format(getName(), p), Material.INK_SACK, (short)8, getLore(p));
-        }
-    }
-
     public abstract AchievementDiff getAchievementDiff();
 
     public abstract String getName();
 
-    public abstract String getSkullURL();
-
     public abstract String getDesc();
 
     public abstract String getAchievement();
-
-    public void setPlace(int place) {
-        this.place = place;
-    }
-
-    @JsonIgnore
-    public int getPlace() {
-        return this.place;
-    }
 
     protected void save() {
         AchievementManager.updateAchievement(this);

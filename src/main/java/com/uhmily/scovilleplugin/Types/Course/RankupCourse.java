@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.uhmily.scovilleplugin.Events.PlayerRankupEvent;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.ItemHelper;
 import com.uhmily.scovilleplugin.Types.Json.Deserializers.LocationDeserializer;
@@ -17,6 +18,7 @@ import net.luckperms.api.context.ImmutableContextSet;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.track.TrackManager;
 import org.apache.commons.lang.StringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -152,6 +154,8 @@ public class RankupCourse extends Course {
             sp.setRank(sp.getRank().nextRank());
             sp.save();
             sp.getRank().applyRank(p);
+            PlayerRankupEvent playerRankupEvent = new PlayerRankupEvent(p, sp.getRank());
+            Bukkit.getPluginManager().callEvent(playerRankupEvent);
             RankupCourse currCourse = RankupCourse.getCourseOrNull(sp.getRank());
             if (currCourse != null) {
                 currCourse.join(p);

@@ -1,8 +1,11 @@
 package com.uhmily.scovilleplugin.Items.Items;
 
+import com.uhmily.scovilleplugin.Events.CheckpointCreamEvent;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Items.HotbarItem;
+import com.uhmily.scovilleplugin.Types.Course.Course;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -39,6 +42,8 @@ public class CheckpointItem extends HotbarItem {
                 if (!effect.getType().equals(PotionEffectType.NIGHT_VISION))
                     p.removePotionEffect(effect.getType());
             }
+            CheckpointCreamEvent checkpointCreamEvent = new CheckpointCreamEvent(Course.getCourse(currentlyPlaying), p);
+            Bukkit.getPluginManager().callEvent(checkpointCreamEvent);
         }
     }
 }

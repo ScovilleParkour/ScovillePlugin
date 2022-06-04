@@ -31,8 +31,7 @@ public class MainMenuInventory extends BaseGUI {
         CREATIVE(14),
         TAGS(16),
         SPAWN(36),
-        ACHIEVEMENTS(39),
-        RADIO(41),
+        RADIO(40),
         LEVELS(44);
 
         private final int pos;
@@ -68,7 +67,6 @@ public class MainMenuInventory extends BaseGUI {
         this.inv.setItem(MainMenuButton.CREATIVE.getPos()    , ItemHelper.createItem(ChatHelper.format("main_menu_creative_button_title", p), Material.DIAMOND_PICKAXE, ItemHelper.createLore("main_menu_creative_button_lore", p)));
         this.inv.setItem(MainMenuButton.TAGS.getPos()        , ItemHelper.createItem(ChatHelper.format("main_menu_cosmetics_button_title", p), Material.NAME_TAG      , ItemHelper.createLore("main_menu_cosmetics_button_lore", p)));
         this.inv.setItem(MainMenuButton.SPAWN.getPos()       , ItemHelper.createItem(ChatHelper.format("main_menu_spawn_button_title", p), Material.BEACON            , ItemHelper.createLore("main_menu_spawn_button_lore", p)));
-        this.inv.setItem(MainMenuButton.ACHIEVEMENTS.getPos(), ItemHelper.createItem(ChatHelper.format("main_menu_achievements_button_title", p), Material.EMERALD    , ItemHelper.createLore("main_menu_achievements_button_lore", p)));
         this.inv.setItem(MainMenuButton.RADIO.getPos(), ItemHelper.createItem(ChatHelper.format("main_menu_radio_button_title", p), Material.RECORD_4    , ItemHelper.createLore("main_menu_radio_button_lore", p)));
         this.inv.setItem(MainMenuButton.LEVELS.getPos()        , ItemHelper.createItem(ChatHelper.format("main_menu_level_button_title", p), Material.EXP_BOTTLE        , ItemHelper.createLore("main_menu_level_button_lore", p)));
     }
@@ -131,10 +129,6 @@ public class MainMenuInventory extends BaseGUI {
                 break;
             case SPAWN:
                 p.performCommand("hub");
-                break;
-            case ACHIEVEMENTS:
-                // TODO: Implement Achievements Button
-                System.out.println("Achievements");
                 break;
             case RADIO:
                 RadioInventory radioInventory = new RadioInventory(p);

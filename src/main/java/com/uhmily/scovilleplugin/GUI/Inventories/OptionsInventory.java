@@ -22,6 +22,7 @@ public class OptionsInventory extends BaseGUI {
         NV(19),
         CHAT(20),
         MUSIC(21),
+        STARTATCP(22),
         PLAYERS(23),
         JOINING(24),
         LANG(25);
@@ -57,12 +58,13 @@ public class OptionsInventory extends BaseGUI {
 
         ScovillePlayer sp = ScovillePlayer.getPlayer(p);
 
-        this.inv.setItem(10, ItemHelper.createItem(ChatHelper.format("options_night_vision", p), Material.SPIDER_EYE));
-        this.inv.setItem(11, ItemHelper.createItem(ChatHelper.format("options_chat", p), Material.PAPER));
-        this.inv.setItem(12, ItemHelper.createItem(ChatHelper.format("options_music", p), Material.RECORD_4));
-        this.inv.setItem(14, ItemHelper.createItem(ChatHelper.format("options_players", p), p));
-        this.inv.setItem(15, ItemHelper.createItem(ChatHelper.format("options_joining", p), Material.ENDER_PEARL));
-        this.inv.setItem(16, ItemHelper.createItem(ChatHelper.format("options_language", p), "http://textures.minecraft.net/texture/fc1e73023352cbc77b896fe7ea242b43143e013bec5bf314d41e5f26548fb2d2"));
+        this.inv.setItem(OptionsButton.NV.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_night_vision", p), Material.SPIDER_EYE));
+        this.inv.setItem(OptionsButton.CHAT.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_chat", p), Material.PAPER));
+        this.inv.setItem(OptionsButton.MUSIC.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_music", p), Material.RECORD_4));
+        this.inv.setItem(OptionsButton.STARTATCP.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_startatcp", p), Material.SIGN));
+        this.inv.setItem(OptionsButton.PLAYERS.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_players", p), p));
+        this.inv.setItem(OptionsButton.JOINING.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_joining", p), Material.ENDER_PEARL));
+        this.inv.setItem(OptionsButton.LANG.getPos() - 9, ItemHelper.createItem(ChatHelper.format("options_language", p), "http://textures.minecraft.net/texture/fc1e73023352cbc77b896fe7ea242b43143e013bec5bf314d41e5f26548fb2d2"));
 
         // Night Vision
         if (p.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
@@ -83,6 +85,13 @@ public class OptionsInventory extends BaseGUI {
             this.inv.setItem(OptionsButton.MUSIC.getPos(), ItemHelper.createItem(ChatHelper.format("options_enabled", p), Material.INK_SACK, (short)10));
         } else {
             this.inv.setItem(OptionsButton.MUSIC.getPos(), ItemHelper.createItem(ChatHelper.format("options_disabled", p), Material.INK_SACK, (short)1));
+        }
+
+        // Toggle Start At CP
+        if (sp.isStartAtCP()) {
+            this.inv.setItem(OptionsButton.STARTATCP.getPos(), ItemHelper.createItem(ChatHelper.format("options_enabled", p), Material.INK_SACK, (short)10));
+        } else {
+            this.inv.setItem(OptionsButton.STARTATCP.getPos(), ItemHelper.createItem(ChatHelper.format("options_disabled", p), Material.INK_SACK, (short)1));
         }
 
         // Toggle Players
@@ -110,6 +119,7 @@ public class OptionsInventory extends BaseGUI {
         if (!isThisInv(e)) return;
         if (!e.getClick().equals(ClickType.LEFT)) return;
         ScovillePlayer sp = ScovillePlayer.getPlayer(this.p);
+        if (sp == null) return;
         switch (OptionsButton.forInt(e.getRawSlot())) {
             case NV:
                 if (p.hasPotionEffect(PotionEffectType.NIGHT_VISION))
@@ -124,6 +134,9 @@ public class OptionsInventory extends BaseGUI {
                 sp.toggleMusic();
                 if (!sp.isMusic()) sp.stopSong();
                 else MusicListener.playSongAtLocation(sp, this.p.getLocation());
+                break;
+            case STARTATCP:
+                sp.toggleStartAtCP();
                 break;
             case PLAYERS:
                 boolean playerVis = !sp.isPlayerVis();

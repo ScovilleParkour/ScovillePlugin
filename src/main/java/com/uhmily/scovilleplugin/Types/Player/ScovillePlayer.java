@@ -70,6 +70,8 @@ public class ScovillePlayer extends ScovilleObject {
     private ModifiedWinMessage winMessage;
     private long xp;
     private final Set<UUID> played;
+    @JsonSetter(nulls = Nulls.SKIP)
+    private boolean isStartAtCP = true;
 
     private ScovillePlayer(UUID p) {
         this(p, new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashSet<>(), new ArrayList<>(), new HashSet<>());
@@ -315,7 +317,8 @@ public class ScovillePlayer extends ScovilleObject {
         if (!this.isOnline()) return;
         this.achievements.add(achievement.getClass().getName());
         Player p = Bukkit.getPlayer(this.getUuid());
-        NamespacedKey key = NamespacedKey.minecraft(achievement.getAchievement());
+        NamespacedKey key = new NamespacedKey("scoville", achievement.getAchievement());
+        System.out.println(key);
         AdvancementProgress progress = p.getAdvancementProgress(Bukkit.getAdvancement(key));
         for (String criteria : progress.getRemainingCriteria())
             progress.awardCriteria(criteria);
@@ -428,6 +431,18 @@ public class ScovillePlayer extends ScovilleObject {
     @JsonIgnore
     public boolean isOnline() {
         return Bukkit.getPlayer(this.getUuid()) != null;
+    }
+
+    public boolean isStartAtCP() {
+        return isStartAtCP;
+    }
+
+    public void setStartAtCP(boolean startAtCP) {
+        isStartAtCP = startAtCP;
+    }
+
+    public void toggleStartAtCP() {
+        this.isStartAtCP = !this.isStartAtCP;
     }
 
     @Override

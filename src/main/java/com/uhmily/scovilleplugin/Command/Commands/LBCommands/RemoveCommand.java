@@ -32,7 +32,6 @@ public class RemoveCommand extends ChildCommand {
         }
 
         String username = args[0];
-        System.out.println(String.join(" ", Arrays.copyOfRange(args, 1, args.length)));
         Course course = Course.getCourse(String.join(" ", Arrays.copyOfRange(args, 1, args.length)));
 
         course.getLeaderboardTimes().remove(UUIDFetcher.getUUID(username));
