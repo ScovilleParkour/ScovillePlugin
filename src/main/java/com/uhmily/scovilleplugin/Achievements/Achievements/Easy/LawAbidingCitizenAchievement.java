@@ -17,9 +17,8 @@ public class LawAbidingCitizenAchievement extends Achievement<PlayerInteractEven
     public void trigger(PlayerInteractEvent e) {
         ScovillePlayer sp = ScovillePlayer.getPlayer(e.getPlayer());
         if (sp == null) return;
-
         if (sp.hasAchievement(this)) return;
-        if (!e.getAction().equals(Action.PHYSICAL)) return;
+        if (!e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
 
         Block plateBlock = e.getClickedBlock();
         if (plateBlock.getLocation().equals(new Location(Bukkit.getWorld("courses_released"), 30000, 51, 100147))) sp.unlockAchievement(this);

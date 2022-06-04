@@ -318,7 +318,6 @@ public class ScovillePlayer extends ScovilleObject {
         this.achievements.add(achievement.getClass().getName());
         Player p = Bukkit.getPlayer(this.getUuid());
         NamespacedKey key = new NamespacedKey("scoville", achievement.getAchievement());
-        System.out.println(key);
         AdvancementProgress progress = p.getAdvancementProgress(Bukkit.getAdvancement(key));
         for (String criteria : progress.getRemainingCriteria())
             progress.awardCriteria(criteria);
@@ -328,6 +327,7 @@ public class ScovillePlayer extends ScovilleObject {
             for (String criteria : progress1.getRemainingCriteria())
                 progress1.awardCriteria(criteria);
         }
+        this.xp += achievement.getAchievementDiff().getXp();
     }
 
     public ArrayList<String> getAchievements() {

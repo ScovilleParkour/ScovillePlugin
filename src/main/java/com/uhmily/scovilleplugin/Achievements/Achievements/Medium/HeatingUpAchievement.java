@@ -2,7 +2,6 @@ package com.uhmily.scovilleplugin.Achievements.Achievements.Medium;
 
 import com.uhmily.scovilleplugin.Achievements.Achievement;
 import com.uhmily.scovilleplugin.Achievements.AchievementDiff;
-import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
 import com.uhmily.scovilleplugin.Events.PlayerRankupEvent;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import com.uhmily.scovilleplugin.Types.Rank;
@@ -37,6 +36,6 @@ public class HeatingUpAchievement extends Achievement<PlayerRankupEvent> {
 
     @Override
     public String getAchievement() {
-        return "easy/heating_up";
+        return "medium/heating_up";
     }
 }

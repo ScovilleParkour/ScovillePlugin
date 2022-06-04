@@ -75,7 +75,7 @@ public class TagListInventory extends BaseGUI {
             if (tag != null) this.tags.add(tag);
         }
 
-        return tags.subList(page * 27, Math.min((page + 1) * 27, tags.size()));
+        return new ArrayList<>(tags).subList(page * 27, Math.min((page + 1) * 27, tags.size()));
 
     }
 
@@ -85,10 +85,10 @@ public class TagListInventory extends BaseGUI {
         clearItems();
         createRow(3);
 
-        this.tags = getTagsForPage(this.type, this.page);
+        List<DeluxeTag> initializeTags = getTagsForPage(this.type, this.page);
 
-        for (int i = 0; i < tags.size(); i++) {
-            DeluxeTag tag = tags.get(i);
+        for (int i = 0; i < initializeTags.size(); i++) {
+            DeluxeTag tag = initializeTags.get(i);
             if (tag.hasTagPermission(this.p)) {
                 if (DeluxeTag.hasTagLoaded(this.p) && DeluxeTag.getPlayerTagIdentifier(this.p).equalsIgnoreCase(tag.getIdentifier()))
                     this.inv.setItem(i, ItemHelper.createItem(tag.getDisplayTag(), Material.NAME_TAG, "", tag.getDescription(), "", ChatHelper.format("tag_list_inventory_selected", this.p)));

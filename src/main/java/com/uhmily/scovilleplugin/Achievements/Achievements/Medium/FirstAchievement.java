@@ -13,12 +13,14 @@ public class FirstAchievement extends Achievement<PlayerJoinEvent> {
     @Override
     @EventHandler
     public void trigger(PlayerJoinEvent event) {
-        ScovillePlayer sp = ScovillePlayer.getPlayer(event.getPlayer());
-        if (sp == null) return;
-        if (sp.hasAchievement(this)) return;
-        if (!isAvailable) return;
-        sp.unlockAchievement(this);
-        isAvailable = false;
+        if (isAvailable) {
+            isAvailable = false;
+            ScovillePlayer sp = ScovillePlayer.getPlayer(event.getPlayer());
+            if (sp == null) return;
+            if (sp.hasAchievement(this)) return;
+            if (!isAvailable) return;
+            sp.unlockAchievement(this);
+        }
     }
 
     @Override
