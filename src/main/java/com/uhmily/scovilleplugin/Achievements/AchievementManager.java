@@ -31,6 +31,7 @@ public class AchievementManager {
         addAchievement(Achievement.getInstance(AddingSomeFlavorAchievement.class));
         addAchievement(Achievement.getInstance(GlobalDominationAchievement.class));
         addAchievement(Achievement.getInstance(LawAbidingCitizenAchievement.class));
+        addAchievement(Achievement.getInstance(MonkeyingAroundAchievement.class));
         addAchievement(Achievement.getInstance(NotAPyramidSchemeAchievement.class));
         addAchievement(Achievement.getInstance(PlayingFavoritesAchievement.class));
         addAchievement(Achievement.getInstance(PublicPolicyInfluencerAchievement.class));

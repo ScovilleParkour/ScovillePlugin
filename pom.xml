@@ -114,7 +114,7 @@
         </repository>
         <repository>
             <id>placeholderapi</id>
-            <url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
         <repository>
             <id>codemc-repo</id>
@@ -131,7 +131,7 @@
         </repository>
         <repository>
             <id>extendedclip</id>
-            <url>http://repo.extendedclip.com/content/repositories/public/</url>
+            <url>https://repo.extendedclip.com/content/repositories/public/</url>
         </repository>
         <repository>
             <id>md_5-public</id>
@@ -143,7 +143,7 @@
         </repository>
         <repository>
             <id>everything</id>
-            <url>http://repo.citizensnpcs.co/</url>
+            <url>https://repo.citizensnpcs.co/</url>
         </repository>
         <repository>
             <id>essentials-releases</id>
