@@ -122,6 +122,7 @@ public final class ScovillePlugin extends JavaPlugin {
         new FoodListener();
         new TagSignListener();
         new CreativeItemListener();
+        new LavaListener();
 
         new ScoPlaceholder().register();
 
