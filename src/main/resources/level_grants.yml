@@ -7,7 +7,7 @@
 "14": ["scoville.message.mr_cool"]
 "16": ["trails.endrod"]
 "18": ["scoville.hotbar.sweets"]
-"20": ["scoville.ragequit", "plots.plot.2", "plots.auto.2", "worldedit.help", "worldedit.history.undo.self", "worldedit.history.redo.self", "worldedit.history.clear"] # WorldEdit Permission
+"20": ["scoville.ragequit.command", "plots.plot.2", "plots.auto.2", "worldedit.help", "worldedit.history.undo.self", "worldedit.history.redo.self", "worldedit.history.clear"] # WorldEdit Permission
 "22": ["libsdisguises.disguise.creeper"]
 "24": ["scoville.emote.gg", "scovile.emote.rip"]
 "26": ["trails.flame"]

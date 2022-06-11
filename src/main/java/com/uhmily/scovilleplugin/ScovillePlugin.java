@@ -63,6 +63,7 @@ public final class ScovillePlugin extends JavaPlugin {
         new DemoteCommand();
         new RestartCommand();
         new XPCommand();
+        new RagequitCommand();
 
         new LeaderboardCommand();
         new FastestCommand();

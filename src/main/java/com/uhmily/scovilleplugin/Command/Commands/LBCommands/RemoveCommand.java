@@ -33,6 +33,8 @@ public class RemoveCommand extends ChildCommand {
             return false;
         }
 
+        System.out.println(args.length);
+
         String username = args[1];
 
         switch (args[0]) {
@@ -41,7 +43,7 @@ public class RemoveCommand extends ChildCommand {
                     p.sendMessage(ChatHelper.format("no_perms", p));
                     return false;
                 }
-                if (args.length != 3) {
+                if (args.length < 3) {
                     p.sendMessage(ChatHelper.format("leaderboard_remove_time_help", p));
                     return false;
                 }
@@ -51,13 +53,14 @@ public class RemoveCommand extends ChildCommand {
                 course.getLeaderboardTimes().remove(UUIDFetcher.getUUID(username));
                 course.save();
                 p.sendMessage(ChatHelper.format("leaderboard_remove_time_success", p, username, course.getColoredName()));
+                break;
             }
             case "beaten": {
                 if (!p.hasPermission("scoville.leaderboard.remove.beaten")) {
                     p.sendMessage(ChatHelper.format("no_perms", p));
                     return false;
                 }
-                if (args.length != 4) {
+                if (args.length < 4) {
                     p.sendMessage(ChatHelper.format("leaderboard_remove_beaten_help", p));
                     return false;
                 }
@@ -78,6 +81,7 @@ public class RemoveCommand extends ChildCommand {
                 player.getTimesCompleted().put(course.getUuid(), Math.max(player.getTimesCompleted(course.getUuid()) - times, 0));
                 player.save();
                 p.sendMessage(ChatHelper.format("leaderboard_remove_beaten_success", p, username, course.getColoredName(), player.getTimesCompleted(course.getUuid())));
+                break;
             }
         }
 
