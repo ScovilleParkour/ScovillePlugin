@@ -80,15 +80,15 @@ public class ChatHelper {
         return format(key, Objects.requireNonNull(ScovillePlayer.getPlayer(p)), args);
     }
 
-    public static String[] formatArray(String key, Player p, String... args) {
+    public static String[] formatArray(String key, Player p, Object... args) {
         return formatArray(key, Objects.requireNonNull(ScovillePlayer.getPlayer(p.getUniqueId())), args);
     }
 
-    public static String[] formatArray(String key, UUID p, String... args) {
+    public static String[] formatArray(String key, UUID p, Object... args) {
         return formatArray(key, Objects.requireNonNull(ScovillePlayer.getPlayer(p)), args);
     }
 
-    public static String[] formatArray(String key, ScovillePlayer sp, String... args) {
+    public static String[] formatArray(String key, ScovillePlayer sp, Object... args) {
         return formatArray(key, sp.getLang(), args);
     }
 

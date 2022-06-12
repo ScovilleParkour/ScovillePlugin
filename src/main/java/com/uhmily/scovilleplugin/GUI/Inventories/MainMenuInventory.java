@@ -135,7 +135,8 @@ public class MainMenuInventory extends BaseGUI {
                 radioInventory.openInventory();
                 break;
             case LEVELS:
-                // TODO: Implement Leveling Button
+                LevelingInventory levelingInventory = new LevelingInventory(p);
+                levelingInventory.openInventory();
                 break;
             default:
                 break;
