@@ -105,6 +105,15 @@ public final class ScovillePlugin extends JavaPlugin {
         new com.uhmily.scovilleplugin.Command.Commands.HotbarCommands.AddCommand();
         new com.uhmily.scovilleplugin.Command.Commands.HotbarCommands.RemoveCommand();
 
+        new ChatColorCommand();
+        new HotbarsCommand();
+        new JoinMessagesCommand();
+        new TrailCommand();
+        new WinMessagesCommand();
+        new NametagsCommand();
+        new HatsCommand();
+        new DisguisesCommand();
+
         new ScovillePlayerListener();
         new StartTimeListener();
         new EndPlateListener();

@@ -54,3 +54,19 @@ commands:
     description: Hub Command
   ragequit:
     description: Ragequit Command
+  trail:
+    description: Trails Command
+  hotbars:
+    description: Hotbars Command
+  winmessages:
+    description: WinMessages Command
+  joinmessages:
+    description: JoinMessages Command
+  chatcolor:
+    description: ChatColor Command
+  nametags:
+    description: Nametags Command
+  hats:
+    description: Hats Command
+  disguises:
+    description: Disguises Command
