@@ -42,6 +42,8 @@ public class MusicListener implements Listener {
         if (Bukkit.getPlayer(sp.getUuid()) == null)
             return;
 
+        boolean song_transition = false;
+
         if (loc.getWorld().equals(Bukkit.getWorld("practice")))
             songName = "Practice";
         else {
@@ -55,6 +57,9 @@ public class MusicListener implements Listener {
                 String song = region.getFlag(ScovillePlugin.SONG_FLAG);
                 if (song == null) continue;
                 songName = song;
+                if (region.getFlag(ScovillePlugin.SONG_TRANSITION_FLAG) != null) {
+                    song_transition = Boolean.TRUE.equals(region.getFlag(ScovillePlugin.SONG_TRANSITION_FLAG));
+                }
                 if (region instanceof GlobalProtectedRegion) {
                     break;
                 }
@@ -63,6 +68,8 @@ public class MusicListener implements Listener {
         if (songName == null) sp.stopSong();
         else {
             Song song = Song.getSong(songName);
+            if (song_transition)
+                song.setTick(sp.getCurrentSong() == null ? 0 : sp.getCurrentSong().getTick());
             if (sp.getCurrentSong() == null) {
                 sp.playSong(song);
             } else if (sp.getCurrentSong().getName().equalsIgnoreCase(song.getName())) return;

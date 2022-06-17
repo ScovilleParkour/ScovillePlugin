@@ -1,6 +1,7 @@
 package com.uhmily.scovilleplugin;
 
 import com.sk89q.worldguard.bukkit.WGBukkit;
+import com.sk89q.worldguard.protection.flags.BooleanFlag;
 import com.sk89q.worldguard.protection.flags.Flag;
 import com.sk89q.worldguard.protection.flags.StringFlag;
 import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
@@ -35,6 +36,7 @@ public final class ScovillePlugin extends JavaPlugin {
     public static final String PERMISSION_NAME = "scovilleplugin";
     private static ScovillePlugin instance;
     public static StringFlag SONG_FLAG;
+    public static BooleanFlag SONG_TRANSITION_FLAG;
 
     @Override
     public void onEnable() {
@@ -151,15 +153,27 @@ public final class ScovillePlugin extends JavaPlugin {
 
         FlagRegistry registry = WGBukkit.getPlugin().getFlagRegistry();
         try {
-            StringFlag flag = new StringFlag("song", (String)null);
-            registry.register(flag);
-            SONG_FLAG = flag;
+            StringFlag songFlag = new StringFlag("song", (String)null);
+            registry.register(songFlag);
+            SONG_FLAG = songFlag;
+
+            BooleanFlag songTransitionFlag = new BooleanFlag("song-transition");
+            registry.register(songTransitionFlag);
+            SONG_TRANSITION_FLAG = songTransitionFlag;
+
         } catch (FlagConflictException e) {
             Flag<?> existing = registry.get("song");
             if (existing instanceof StringFlag) {
                 SONG_FLAG = (StringFlag) existing;
             }
+
+            Flag<?> existing2 = registry.get("song_transition");
+            if (existing2 instanceof BooleanFlag) {
+                SONG_TRANSITION_FLAG = (BooleanFlag) existing2;
+            }
         }
+
+        System.out.println(SONG_TRANSITION_FLAG);
 
     }
 
