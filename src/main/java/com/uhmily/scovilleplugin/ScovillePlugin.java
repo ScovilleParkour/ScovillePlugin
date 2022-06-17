@@ -6,6 +6,7 @@ import com.sk89q.worldguard.protection.flags.StringFlag;
 import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
 import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
 import com.uhmily.scovilleplugin.Achievements.AchievementManager;
+import com.uhmily.scovilleplugin.Announcements.AnnouncementManager;
 import com.uhmily.scovilleplugin.Command.Commands.*;
 import com.uhmily.scovilleplugin.Command.Commands.HelpCommands.*;
 import com.uhmily.scovilleplugin.Command.Commands.LBCommands.BeatenCommand;
@@ -131,6 +132,7 @@ public final class ScovillePlugin extends JavaPlugin {
         Song.loadSongs();
         TagManager.load();
 
+        AnnouncementManager.getInstance().startTask();
         AchievementManager.getInstance().register();
         TaskManager.getInstance().getAutoRestartTask().setEnabled(true);
         TaskManager.getInstance().loadTasks();

@@ -395,8 +395,24 @@ achievement_wheredyougo: "どこ行ったん"
 achievement_wheredyougo_desc: "10時間放置する"
 pk_tagsign_help: "&8[&c*&8] &cUsage&7: /pk tagsign &cid"
 tagsign_created: "&8[&a*&8] &7Tag Sign/Plate &acreated&7!"
-help_command_commands_1: ["&8&m-------------&r&8[&e&lCommands&r&8]&8&m-------------\n", "&8- &e/help &7- access the help menu.\n", "&8- &e/helpop &7- talk to an online staff member.\n", "&8- &e/hub &7- return to the hub.\n", "&8- &e/lobby &7- return to the course lobby.\n", "&8- &e/join course name &7- join a course.\n", "&8- &e/joinplayer name &7- join the course someone is playing.\n", "&8&m*--&r&8[&7Page &e1 &7of &e2&8]&8&m--*\n", "&8&m------------------------------------"]
-help_command_commands_2: ["&8&m-------------&r&8[&e&lCommands&r&8]&8&m-------------\n", "&8- &e/gethotbar &7- restore hotbar.\n", "&8- &e/leaderboard &7- view the leaderboard for a course.\n", "&8- &e/myrank &7- join your rank.\n", "&8- &e/nv &7- toggle night vision.\n", "&8- &e/playing <name> &7- see which course someone is playing.\n", "&8- &e/practice &7- toggle practice mode.\n", "&8&m*--&r&8[&7Page &e2 &7of &e2&8]&8&m--*\n", "&8&m------------------------------------"]
+help_command_commands_1: [ "&8&m-------------&r&8[&e&lCommands&r&8]&8&m-------------\n",
+                           "&8- &e/help &7- access the help menu.\n",
+                           "&8- &e/helpop &7- talk to an online staff member.\n",
+                           "&8- &e/hub &7- return to the hub.\n",
+                           "&8- &e/lobby &7- return to the course lobby.\n",
+                           "&8- &e/join <course name> &7- join a course.\n",
+                           "&8- &e/joinplayer <name> &7- join the course someone is playing.\n",
+                           "&8&m*--&r&8[&7Page &e1 &7of &e2&8]&8&m--*\n",
+                           "&8&m------------------------------------" ]
+help_command_commands_2: [ "&8&m-------------&r&8[&e&lCommands&r&8]&8&m-------------\n",
+                           "&8- &e/gethotbar &7- restore hotbar.\n",
+                           "&8- &e/leaderboard &7- view the leaderboard for a course.\n",
+                           "&8- &e/myrank &7- join your rank.\n",
+                           "&8- &e/nv &7- toggle night vision.\n",
+                           "&8- &e/playing <name> &7- see which course someone is playing.\n",
+                           "&8- &e/practice &7- toggle practice mode.\n",
+                           "&8&m*--&r&8[&7Page &e2 &7of &e2&8]&8&m--*\n",
+                           "&8&m------------------------------------" ]
 promoted_player: "&8[&a*&8] &a{0} &7has been promoted to {1}&7!"
 demoted_player: "&8[&a*&8] &a{0} &7has been demoted to {1}&7!"
 saved_data: "&8[&a*&8] &7Saved all data &asuccessfully&7!"
@@ -406,3 +422,119 @@ timed_restart_minute: "&8[&c*&8] &7The server will restart in &c{0} &7minute"
 timed_restart_seconds: "&8[&c*&8] &7The server will restart in &c{0} &7seconds!"
 timed_restart_second: "&8[&c*&8] &7The server will restart in &c{0} &7second!"
 timed_restarting: "&8[&c*&8] &7The server is &crestarting&7!"
+pk_season_setname_help: "&8[&c*&8] &7Usage: /pk season setname &cid name &7(Name is one word)"
+achievement_addingsomeflavor: "Adding Some Flavor"
+achievement_addingsomeflavor_desc: "Beat the green colored rankups"
+achievement_globaldomination: "Global Domination"
+achievement_globaldomination_desc: "Beat all four \"World of _\" courses"
+achievement_lawabidingcitizen: "Law Abiding Citizen"
+achievement_lawabidingcitizen_desc: "Testify in court"
+achievement_notapyramidscheme: "Not a Pyramid Scheme"
+achievement_notapyramidscheme_desc: "Beat \"Melonaire\" in over an hour"
+achievement_publicpolicyinfluencer: "Public Policy Influencer"
+achievement_publicpolicyinfluencer_desc: "Find the puzzle room in the hub"
+achievement_flavortown: "Flavortown"
+achievement_flavortown_desc: "Beat at least one course of each difficulty"
+achievement_ign: "IGN"
+achievement_ign_desc: "Beat a difficulty 10 course"
+achievement_matchless: "Matchless"
+achievement_matchless_desc: "Beat Muteki in under 250 CPs"
+achievement_allstar: "All-Star"
+achievement_allstar_desc: "Beat NBA without using checkpoints"
+achievement_first: "FIRST!"
+achievement_first_desc: "Be the first on after a reset"
+achievement_heatingup: "Heating Up"
+achievement_heatingup_desc: "Beat the yellow colored rankups"
+achievement_marvelousmaker: "Marvelous Maker"
+achievement_marvelousmaker_desc: "Beat five courses by one maker"
+achievement_thatsgottahurt: "That's Gotta Hurt..."
+achievement_thatsgottahurt_desc: "Fall in the brown pit in Iro"
+options_startatcp: "&6&lStart at CP"
+pk_xp_help: "&8[&c*&8] &cUsage&7: /pk xp grant/revoke/set &cplayer xp"
+pk_xp_grant_help: "&8[&c*&8] &cUsage&7: /pk xp grant &cplayer xp"
+unknown_player: "&8[&c*&8] &7That &cplayer &7does not exist!"
+player_never_joined: "&8[&c*&8] &7That &cplayer &7has never joined &cScoville &7before!"
+pk_xp_revoke_help: "&8[&c*&8] &cUsage&7: /pk xp revoke &cplayer xp"
+pk_xp_set_help: "&8[&c*&8] &cUsage&7: /pk xp set &cplayer xp"
+set_xp: "&8[&a*&8] &7Set &a{0}&7''s XP from &a{1} &7to &a{2}&7!"
+achievement_monkeyingaround: "Monkeying Around"
+achievement_monkeyingaround_desc: "ooh ooh aAH AAH AHHH"
+leaderboard_remove_time_success: "&8[&c*&8] &7Removed &c{0}''s time &7from the &c{1} &7leaderboard!"
+leaderboard_remove_time_help: "&8[&c*&8] &7Usage: /lb remove time &cusername course"
+leaderboard_remove_beaten_success: "&8[&c*&8] &7Set &c{0}''s &7times completed on &c{1} &7to &c{2}&7!"
+leaderboard_remove_beaten_help: "&8[&c*&8] &7Usage: /lb remove beaten &cusername times course"
+set_cp: "&8[&a*&8] &7Set your &apractice &7CP!"
+set_cp_name: "&2&lSet Checkpoint"
+practice_fly_name: "&b&lToggle Fly"
+invalid_args: "&8[&c*&8] &7Invalid &carguments&7!"
+ragequit_message: "&8[&c*&8] &c{0} &7has &4&lR&c&lA&4&lG&c&lE&4&lQ&c&lU&4&lI&c&lT&7!"
+level_2_desc: ["&7Cow Disguise", "&8 - /disguise cow"]
+level_4_desc: ["&e\u263a &7Emote", "&8 - :smile:", "&9\u2639 &7Emote", "&8 - :frown:", "&c\u2764 &7Emote", "&8 - :heart:"]
+level_6_desc: ["&7Magic Trail", "&8 - /trails"]
+level_8_desc: ["&7Flower Power Hotbar", "&8 - /hotbars"]
+level_10_desc: ["&7WorldEdit in Plot World", "&8 - //help"]
+level_12_desc: ["&7Pig Disguise", "&8 - /disguise pig"]
+level_14_desc: ["&7Mr. Cool Join Message", "&8 - /joinmessages"]
+level_16_desc: ["&7End Rod Trail", "&8 - /trails"]
+level_18_desc: ["&7Sweet Treats Hotbar", "&8 - /hotbars"]
+level_20_desc: ["&7Ragequit Command", "&8 - /ragequit", "&7Radio", "&8 - /radio", "&7+1 Plot", "&8 - /plotme"]
+level_22_desc: ["&7Creeper Disguise", "&8 - /disguise creeper"]
+level_24_desc: ["&2&lG&a&lG&f&l! &7Emote", "&8 - :gg:", "&8&lR&7&lI&f&lP &7Emote", "&8 - :rip:"]
+level_26_desc: ["&7Flame Trail", "&8 - /trails"]
+level_28_desc: ["&7Farmhand Hotbar", "&8 - /hotbars"]
+level_30_desc: ["&7Leet Win Message", "&8 - /winmessages", "&7Conquistador Win Message", "&8 - /winmessages"]
+level_32_desc: ["&7Sheep Disguise", "&8 - /disguise sheep"]
+level_34_desc: ["&7Shakespeare Join Message", "&8 - /joinmessages"]
+level_36_Desc: ["&7Cloud Trail", "&8 - /trails"]
+level_38_desc: ["&7Fishmonger Hotbar", "&8 - /hotbars"]
+level_40_desc: ["&dLight Purple &7Chatcolor", "&8 - /chatcolor"]
+level_42_desc: ["&7Pigman Disguise", "&8 - /disguise pig_zombie"]
+level_44_desc: ["&a&lWIN &2&l\u2714 &7Emote", "&8 - :win:", "&c&lFAIL &4&l\u2718 &7Emote", "&8 - :fail:"]
+level_46_desc: ["&7Crit Trail", "&8 - /trails"]
+level_48_desc: ["&7Spudtacular Hotbar", "&8 - /hotbars"]
+level_50_desc: ["&7Times Completed Win Mesage Option", "&8 - /winmessages", "&7Spicy Win Message", "&8 - /winmessages"]
+level_52_desc: ["&7Parrot Disguise", "&8 - /disguise parrot"]
+level_54_desc: ["&7Superhero Join Message", "&8 - /joinmessages"]
+level_56_desc: ["&7Particle Trail", "&8 - /trails"]
+level_58_desc: ["&7One in a Melon Hotbar", "&8 - /hotbars"]
+level_60_desc: ["&7Disbelief Win Message", "&8 - /winmessages", "&7Reverse Win Message", "&8 - /winmessages", "&7+1 Plot", "&8 - /plotme"]
+level_62_desc: ["&7Wither Skeleton Disguise", "&8 - /disguise wither_skeleton"]
+level_64_desc: ["&e(\u256F&f°&e\u25A1&f°&e)\u256F&7\uFE35&6\u253B\u2501\u253B &7Emote", "&8 - :tableflip:", "&e¯\\_(\u30C4)_/¯ &7Emote", "&8 - :shrug:"]
+level_66_desc: ["&7Note Trail", "&8 - /trails"]
+level_68_desc: ["&7Engineer Hotbar", "&8 - /hotbars"]
+level_70_desc: ["&7Customizable Leather Armor", "&8 - /armor"]
+level_72_desc: ["&7Vex Disguise", "&8 - /disguise vex"]
+level_74_desc: ["&7Aviation Join Message", "&8 - /joinmessages"]
+level_76_desc: ["&7Damage Trail", "&8 - /trails"]
+level_78_desc: ["&7Bling Bling Hotbar", "&8 - /hotbars"]
+level_80_desc: ["&5Purple &7Chatcolor", "&8 - /chatcolor"]
+level_82_desc: ["&7Blaze Disguise", "&8 - /disguise blaze"]
+level_84_desc: ["&c\u30FD&6(&e°&a\u3007&b°&d)&5\uFF89 &7Emote", "&8 - :pog:", "&e\u2055&6\u272D&e\u2055 &d\\(&e☆&d\u03C9&e☆&d)/ &e\u2055&6\u272D&e\u2055 &7Emote", "&8 - :owo:"]
+level_86_desc: ["&7Totem Trail", "&8 - /trails"]
+level_88_desc: ["&7Hot Hands Hotbar", "&8 - /hotbars"]
+level_90_desc: ["&7Rainbow Win Message Option", "&8 - /winmessages", "&7Hype Win Message", "&8 - /winmessages", "&7Daily Win Message", "&8 - /winmessages", "&7Robotic Win Message", "&8 - /winmessages"]
+level_92_desc: ["&7Block Disguise", "&8 - /disguise block"]
+level_94_desc: ["&7Monarch Join Message", "&8 - /joinmessages"]
+level_96_desc: ["&7Rainbow Trail", "&8 - /trails"]
+level_98_desc: ["&8Endgame Hotbar", "&8 - /hotbars"]
+level_100_desc: ["&c&l100"]
+leveling_inventory_title: "&8Leveling Inventory"
+leveling_inventory_level_title: "&a&lLevel {0}"
+leveling_inventory_prev_button_title: "&aPrevious Page"
+leveling_inventory_next_button_title: "&aNext Page"
+leveling_inventory_back_button_title: "&aBack to Main Menu"
+leveling_inventory_progress_button_title: "&a&lLevel Progress"
+leveling_inventory_progress_button_lore: ["", "&7Current Level: &a{0}", "&7Level Progress: {1} &8({2}%)", "&7Experience Needed: &a{3}"]
+leveling_inventory_jump_button_title: "&c&lJump to Current Level"
+leveling_inventory_jump_button_lore: ["&7Click me to Jump to your current level page!"]
+announcements: ["&8[&4Scoville&8] &7Have a player to report? Message online staff with &c/helpop&7!", "&8[&4Scoville&8] &7Want to get info, updates, and help on the server? Join our &cDiscord&7! &cdiscord.gg/qnG8qa4utm", "&8[&4Scoville&8] &7Make sure to read the &c/rules&7!", "&8[&4Scoville&8] &7Want to submit a &ccourse&7? Do so in &c#course-submission &7in our &cDiscord&7! &cdiscord.gg/qnG8qa4utm", "&8[&4Scoville&8] &7Want to change a setting? Click the &cOptions &7head!", "&8[&4Scoville&8] &7Use &c/prac &7to practice a jump!", "&8[&4Scoville&8] &7Level rewards can be viewed in the menu by clicking the &cexperience bottle&7!", "&8[&4Scoville&8] &7Beating a course gives a slight chance at obtaining a &cshiny tag&7!", "&8[&4Scoville&8] &cRedstone lamps &7teleport you back to your &ccheckpoint&7!", "&8[&4Scoville&8] &7There are &csecrets &7throughout the server. Can you find them all?"]
+course_list_sort_lore: [
+  "",
+  "➛ Date Added",
+  "➛ Creator",
+  "➛ Alphabetically",
+  "➛ Difficulty",
+  "➛ Type",
+  "➛ Season"
+]
+course_list_sort_title: "&aSorted by:"

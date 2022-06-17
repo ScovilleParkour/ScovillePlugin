@@ -527,3 +527,14 @@ leveling_inventory_progress_button_title: "&a&lLevel Progress"
 leveling_inventory_progress_button_lore: ["", "&7Current Level: &a{0}", "&7Level Progress: {1} &8({2}%)", "&7Experience Needed: &a{3}"]
 leveling_inventory_jump_button_title: "&c&lJump to Current Level"
 leveling_inventory_jump_button_lore: ["&7Click me to Jump to your current level page!"]
+announcements: ["&8[&4Scoville&8] &7Have a player to report? Message online staff with &c/helpop&7!", "&8[&4Scoville&8] &7Want to get info, updates, and help on the server? Join our &cDiscord&7! &cdiscord.gg/qnG8qa4utm", "&8[&4Scoville&8] &7Make sure to read the &c/rules&7!", "&8[&4Scoville&8] &7Want to submit a &ccourse&7? Do so in &c#course-submission &7in our &cDiscord&7! &cdiscord.gg/qnG8qa4utm", "&8[&4Scoville&8] &7Want to change a setting? Click the &cOptions &7head!", "&8[&4Scoville&8] &7Use &c/prac &7to practice a jump!", "&8[&4Scoville&8] &7Level rewards can be viewed in the menu by clicking the &cexperience bottle&7!", "&8[&4Scoville&8] &7Beating a course gives a slight chance at obtaining a &cshiny tag&7!", "&8[&4Scoville&8] &cRedstone lamps &7teleport you back to your &ccheckpoint&7!", "&8[&4Scoville&8] &7There are &csecrets &7throughout the server. Can you find them all?"]
+course_list_sort_lore: [
+  "",
+  "➛ Date Added",
+  "➛ Creator",
+  "➛ Alphabetically",
+  "➛ Difficulty",
+  "➛ Type",
+  "➛ Season"
+]
+course_list_sort_title: "&aSorted by:"

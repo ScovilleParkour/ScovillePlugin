@@ -7,6 +7,7 @@ import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
 import com.uhmily.scovilleplugin.Types.Course.Course;
 import com.uhmily.scovilleplugin.Types.Course.RankupCourse;
 import com.uhmily.scovilleplugin.Types.Season.Season;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,6 +16,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -198,29 +200,37 @@ public class CourseListInventory extends BaseGUI {
             inv.setItem(CourseListButton.BACK.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_previous_page", p), Material.ARROW));
         }
 
+        String[] sortLore = Arrays.stream(ChatHelper.formatArray("course_list_sort_lore", p)).map(s -> ChatColor.GRAY + s).toArray(String[]::new);
+
         switch (type) {
             case DATE: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_date_added", p), Material.WATCH));
+                sortLore[1] = ChatColor.GREEN + ChatColor.stripColor(sortLore[1]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), Material.WATCH, sortLore));
                 break;
             }
             case CREATOR: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_creator", p), p));
+                sortLore[2] = ChatColor.GREEN + ChatColor.stripColor(sortLore[2]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), p, sortLore));
                 break;
             }
             case ALPHABET: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_alpha", p), Material.SKULL_ITEM, (short)3));
+                sortLore[3] = ChatColor.GREEN + ChatColor.stripColor(sortLore[3]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), Material.SKULL_ITEM, (short)3, sortLore));
                 break;
             }
             case DIFF: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_diff", p), Material.DIAMOND));
+                sortLore[4] = ChatColor.GREEN + ChatColor.stripColor(sortLore[4]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), Material.DIAMOND, sortLore));
                 break;
             }
             case TYPE: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_type", p), Material.PAPER));
+                sortLore[5] = ChatColor.GREEN + ChatColor.stripColor(sortLore[5]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), Material.PAPER, sortLore));
                 break;
             }
             case SEASON: {
-                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_by_season", p), Material.BEACON));
+                sortLore[6] = ChatColor.GREEN + ChatColor.stripColor(sortLore[6]);
+                inv.setItem(CourseListButton.SORT.getPos(), ItemHelper.createItem(ChatHelper.format("course_list_sort_title", p), Material.BEACON, sortLore));
                 break;
             }
         }
