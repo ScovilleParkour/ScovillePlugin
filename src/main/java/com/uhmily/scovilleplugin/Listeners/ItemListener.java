@@ -14,6 +14,7 @@ import org.bukkit.event.inventory.*;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 import java.lang.reflect.InvocationTargetException;
@@ -27,6 +28,8 @@ public class ItemListener implements Listener {
 
     @EventHandler
     public void onClick(PlayerInteractEvent e) {
+
+        if (!e.getHand().equals(EquipmentSlot.HAND)) return;
 
         Player p = e.getPlayer();
         ItemStack heldItem = p.getInventory().getItemInMainHand();
