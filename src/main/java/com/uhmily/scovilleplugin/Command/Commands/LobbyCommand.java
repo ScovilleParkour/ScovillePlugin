@@ -46,6 +46,8 @@ public class LobbyCommand extends BaseCommand {
                 continue;
             p.removePotionEffect(effect.getType());
         }
+        p.getInventory().clear();
+        p.performCommand("gethotbar");
         p.setFlying(false);
         p.setAllowFlight(false);
         sp.setPracticeCP(null);

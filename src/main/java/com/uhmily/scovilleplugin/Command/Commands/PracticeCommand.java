@@ -4,6 +4,7 @@ import com.uhmily.scovilleplugin.Command.ParentCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Items.Items.Practice.PracticeFlyItem;
 import com.uhmily.scovilleplugin.Items.Items.Practice.SetCpItem;
+import com.uhmily.scovilleplugin.ScovillePlugin;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -54,6 +55,10 @@ public class PracticeCommand extends ParentCommand {
                 p.teleport(new Location(Bukkit.getWorld("practice"), currLoc.getX(), currLoc.getY(), currLoc.getZ(), currLoc.getYaw(), currLoc.getPitch()));
             }
             sp.setPracticeCP(p.getLocation());
+            Bukkit.getScheduler().scheduleSyncDelayedTask(ScovillePlugin.getInstance(), () -> {
+                p.getInventory().clear();
+                p.performCommand("gethotbar");
+            }, 3L);
         } else {
             p.sendMessage(ChatHelper.format("isnt_practicing", p));
             p.teleport(sp.getPracticeStart());

@@ -2,7 +2,6 @@ package com.uhmily.scovilleplugin.Achievements.Achievements.Easy;
 
 import com.uhmily.scovilleplugin.Achievements.Achievement;
 import com.uhmily.scovilleplugin.Achievements.AchievementDiff;
-import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
 import com.uhmily.scovilleplugin.Events.PlayerRankupEvent;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import com.uhmily.scovilleplugin.Types.Rank;

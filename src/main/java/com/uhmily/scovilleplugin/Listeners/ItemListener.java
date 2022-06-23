@@ -85,7 +85,7 @@ public class ItemListener implements Listener {
         items = items.stream().filter(Objects::nonNull).filter(itemStack -> !itemStack.getType().equals(Material.AIR)).collect(Collectors.toCollection(ArrayList::new));
 
         if (items.size() == 0) return;
-        if (items.stream().noneMatch(itemStack -> new NBTItem(itemStack).hasKey("HotbarItem"))) return;
+        if (items.stream().noneMatch(itemStack -> new NBTItem(itemStack).hasKey("HotbarItem") || new NBTItem(itemStack).hasKey("CanPlaceOn"))) return;
 
         e.setCancelled(true);
     }
