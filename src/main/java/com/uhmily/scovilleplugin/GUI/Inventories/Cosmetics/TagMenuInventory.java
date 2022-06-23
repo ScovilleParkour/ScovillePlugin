@@ -97,6 +97,8 @@ public class TagMenuInventory extends BaseGUI {
                 CosmeticInventory cosmeticInventory = new CosmeticInventory(p);
                 cosmeticInventory.openInventory();
                 return;
+            default:
+                return;
         }
 
         if (type == null) return;

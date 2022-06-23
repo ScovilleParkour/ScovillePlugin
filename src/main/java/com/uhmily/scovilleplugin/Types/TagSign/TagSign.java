@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.uhmily.scovilleplugin.Types.Json.Deserializers.LocationDeserializer;
 import com.uhmily.scovilleplugin.Types.Json.Serializers.LocationSerializer;
 import com.uhmily.scovilleplugin.Types.ScovilleObject;
-import com.uhmily.scovilleplugin.Types.TPSigns.TPSign;
 import org.bukkit.Location;
 
 import java.util.ArrayList;

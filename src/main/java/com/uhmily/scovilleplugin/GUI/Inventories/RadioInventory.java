@@ -135,6 +135,8 @@ public class RadioInventory extends BaseGUI {
                         openInventory();
                     }
                     return;
+                default:
+                    return;
             }
         }
 

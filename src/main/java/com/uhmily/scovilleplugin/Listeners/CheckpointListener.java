@@ -1,7 +1,6 @@
 package com.uhmily.scovilleplugin.Listeners;
 
 import com.uhmily.scovilleplugin.Events.CheckpointSignEvent;
-import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.ScovillePlugin;
 import com.uhmily.scovilleplugin.Types.Course.Course;
@@ -16,8 +15,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-
-import java.util.Optional;
 
 public class CheckpointListener implements Listener {
 

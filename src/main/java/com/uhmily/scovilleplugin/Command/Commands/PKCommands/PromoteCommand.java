@@ -4,20 +4,12 @@ import com.uhmily.scovilleplugin.Command.ChildCommand;
 import com.uhmily.scovilleplugin.Command.Commands.PKCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
-import com.uhmily.scovilleplugin.Types.Course.Course;
-import com.uhmily.scovilleplugin.Types.Plate.Plate;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import com.uhmily.scovilleplugin.Types.Rank;
-import net.luckperms.api.LuckPermsProvider;
-import net.luckperms.api.context.ImmutableContextSet;
-import net.luckperms.api.model.user.User;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Set;
 import java.util.UUID;
 
 public class PromoteCommand extends ChildCommand {

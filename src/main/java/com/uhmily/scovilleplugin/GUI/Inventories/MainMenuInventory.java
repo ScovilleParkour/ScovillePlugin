@@ -6,7 +6,6 @@ import com.uhmily.scovilleplugin.Helpers.ItemHelper;
 import com.uhmily.scovilleplugin.Types.Course.RankupCourse;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import me.clip.deluxetags.DeluxeTag;
-import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.Node;

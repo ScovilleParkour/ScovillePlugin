@@ -1,7 +1,6 @@
 package com.uhmily.scovilleplugin.Listeners;
 
 import com.earth2me.essentials.Essentials;
-import com.earth2me.essentials.IEssentials;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Leveling.LevelManager;
 import com.uhmily.scovilleplugin.ScovillePlugin;

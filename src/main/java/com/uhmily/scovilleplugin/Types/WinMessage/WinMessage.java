@@ -1,7 +1,5 @@
 package com.uhmily.scovilleplugin.Types.WinMessage;
 
-import com.uhmily.scovilleplugin.Types.JoinLeaveMessage;
-
 import java.util.Arrays;
 import java.util.Optional;
 

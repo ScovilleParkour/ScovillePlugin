@@ -148,6 +148,8 @@ public class ChatColorInventory extends BaseGUI {
                 CosmeticInventory cosmeticInventory = new CosmeticInventory(p);
                 cosmeticInventory.openInventory();
                 break;
+            default:
+                break;
         }
 
     }

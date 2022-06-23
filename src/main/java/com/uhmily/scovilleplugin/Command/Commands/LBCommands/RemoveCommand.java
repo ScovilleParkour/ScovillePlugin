@@ -1,12 +1,10 @@
 package com.uhmily.scovilleplugin.Command.Commands.LBCommands;
 
 import com.uhmily.scovilleplugin.Command.ChildCommand;
-import com.uhmily.scovilleplugin.Command.Commands.HotbarCommand;
 import com.uhmily.scovilleplugin.Command.Commands.LeaderboardCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
 import com.uhmily.scovilleplugin.Types.Course.Course;
-import com.uhmily.scovilleplugin.Types.Hotbar.Hotbar;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

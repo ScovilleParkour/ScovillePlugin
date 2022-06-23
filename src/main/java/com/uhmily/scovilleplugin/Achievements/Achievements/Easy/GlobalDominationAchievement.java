@@ -1,26 +1,12 @@
 package com.uhmily.scovilleplugin.Achievements.Achievements.Easy;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import com.uhmily.scovilleplugin.Achievements.Achievement;
 import com.uhmily.scovilleplugin.Achievements.AchievementDiff;
 import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
 import com.uhmily.scovilleplugin.Types.Course.Course;
-import com.uhmily.scovilleplugin.Types.Plate.Plate;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
 
 public class GlobalDominationAchievement extends Achievement<CourseCompleteEvent> {
 

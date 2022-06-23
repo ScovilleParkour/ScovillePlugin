@@ -5,16 +5,10 @@ import com.uhmily.scovilleplugin.Command.Commands.PKCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
-import com.uhmily.scovilleplugin.Types.TPSigns.TPSign;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Set;
 import java.util.UUID;
 
 public class XPCommand extends ChildCommand {

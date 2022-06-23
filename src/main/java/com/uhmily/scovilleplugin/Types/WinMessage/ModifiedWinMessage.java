@@ -1,8 +1,5 @@
 package com.uhmily.scovilleplugin.Types.WinMessage;
 
-import com.uhmily.scovilleplugin.Helpers.ChatHelper;
-import org.bukkit.entity.Player;
-
 public class ModifiedWinMessage {
 
     private WinMessage message;

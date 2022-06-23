@@ -19,7 +19,6 @@ import org.bukkit.inventory.ItemStack;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ItemListener implements Listener {
@@ -49,8 +48,6 @@ public class ItemListener implements Listener {
 
     @EventHandler
     public void OnPlace(BlockPlaceEvent e) {
-
-        Player p = e.getPlayer();
 
         ItemStack heldItem = e.getItemInHand();
         if (heldItem == null || heldItem.getType() == Material.AIR) return;

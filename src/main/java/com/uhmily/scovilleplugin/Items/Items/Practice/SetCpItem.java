@@ -1,8 +1,6 @@
 package com.uhmily.scovilleplugin.Items.Items.Practice;
 
-import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Items.HotbarItem;
-import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

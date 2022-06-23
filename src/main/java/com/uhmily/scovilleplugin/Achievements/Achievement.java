@@ -2,18 +2,15 @@ package com.uhmily.scovilleplugin.Achievements;
 
 import com.fasterxml.jackson.annotation.*;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
-import com.uhmily.scovilleplugin.Helpers.ItemHelper;
 import com.uhmily.scovilleplugin.ScovillePlugin;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import com.uhmily.scovilleplugin.Types.ScovilleObject;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;

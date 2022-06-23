@@ -1,14 +1,9 @@
 package com.uhmily.scovilleplugin.GUI.Inventories.Cosmetics;
 
-import com.nametagedit.plugin.NametagEdit;
-import com.nametagedit.plugin.api.data.Nametag;
 import com.uhmily.scovilleplugin.GUI.BaseGUI;
 import com.uhmily.scovilleplugin.GUI.Inventories.CosmeticInventory;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.ItemHelper;
-import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
-import me.libraryaddict.disguise.DisguiseAPI;
-import me.libraryaddict.disguise.disguisetypes.Disguise;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

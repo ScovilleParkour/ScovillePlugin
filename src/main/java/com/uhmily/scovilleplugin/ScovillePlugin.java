@@ -28,7 +28,7 @@ import com.uhmily.scovilleplugin.Types.Music.Song;
 import com.uhmily.scovilleplugin.Types.ScoPlaceholder;
 import com.uhmily.scovilleplugin.Types.Tag.TagManager;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ScovillePlugin extends JavaPlugin {

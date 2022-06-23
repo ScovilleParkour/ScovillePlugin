@@ -157,6 +157,8 @@ public class OptionsInventory extends BaseGUI {
             case LANG:
                 sp.setLang(sp.getLang().nextLang());
                 break;
+            default:
+                break;
         }
         sp.save();
         this.updateItems();

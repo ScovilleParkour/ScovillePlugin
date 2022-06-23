@@ -2,8 +2,6 @@ package com.uhmily.scovilleplugin.Command.Commands;
 
 import com.uhmily.scovilleplugin.Command.ParentCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
-import com.uhmily.scovilleplugin.Items.Items.Practice.PracticeFlyItem;
-import com.uhmily.scovilleplugin.Items.Items.Practice.SetCpItem;
 import com.uhmily.scovilleplugin.ScovillePlugin;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.Bukkit;
@@ -11,8 +9,6 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class PracticeCommand extends ParentCommand {
 

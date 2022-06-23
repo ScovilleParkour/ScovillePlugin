@@ -318,7 +318,7 @@ public class ScovillePlayer extends ScovilleObject {
         AdvancementProgress progress = p.getAdvancementProgress(Bukkit.getAdvancement(key));
         for (String criteria : progress.getRemainingCriteria())
             progress.awardCriteria(criteria);
-        if (achievement.getType().equals(AchievementDiff.SPECIAL)) {
+        if (achievement.getAchievementDiff().equals(AchievementDiff.SPECIAL)) {
             NamespacedKey specialKey = NamespacedKey.minecraft("scoville:special");
             AdvancementProgress progress1 = p.getAdvancementProgress(Bukkit.getAdvancement(specialKey));
             for (String criteria : progress1.getRemainingCriteria())

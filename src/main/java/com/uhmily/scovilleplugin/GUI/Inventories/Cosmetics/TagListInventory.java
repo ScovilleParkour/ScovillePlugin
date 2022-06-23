@@ -152,6 +152,8 @@ public class TagListInventory extends BaseGUI {
                         openInventory();
                     }
                     break;
+                default:
+                    break;
             }
         }
 

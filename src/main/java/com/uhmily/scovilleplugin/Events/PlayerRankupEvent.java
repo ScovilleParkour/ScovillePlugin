@@ -1,6 +1,5 @@
 package com.uhmily.scovilleplugin.Events;
 
-import com.uhmily.scovilleplugin.Types.Course.Course;
 import com.uhmily.scovilleplugin.Types.Rank;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;

@@ -2,7 +2,6 @@ package com.uhmily.scovilleplugin.Listeners;
 
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.ScovillePlugin;
-import com.uhmily.scovilleplugin.Types.TPSigns.TPSign;
 import com.uhmily.scovilleplugin.Types.TagSign.TagSign;
 import me.clip.deluxetags.DeluxeTag;
 import net.luckperms.api.LuckPermsProvider;

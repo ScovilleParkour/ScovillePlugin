@@ -34,8 +34,6 @@ public class PotionDataWrapped {
         this(type, false, false);
     }
 
-    private PotionDataWrapped() { this(PotionType.AWKWARD); }
-
     public PotionDataWrapped(PotionData data) { this(data.getType(), data.isExtended(), data.isUpgraded()); }
 
     public PotionData toData() {

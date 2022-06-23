@@ -111,6 +111,8 @@ public class CosmeticInventory extends BaseGUI {
                 MainMenuInventory mainMenuInventory = new MainMenuInventory(p);
                 mainMenuInventory.openInventory();
                 break;
+            default:
+                break;
         }
 
     }

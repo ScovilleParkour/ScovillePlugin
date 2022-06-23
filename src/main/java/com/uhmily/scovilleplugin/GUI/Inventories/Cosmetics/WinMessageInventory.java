@@ -1,20 +1,12 @@
 package com.uhmily.scovilleplugin.GUI.Inventories.Cosmetics;
 
-import com.nametagedit.plugin.NametagEdit;
-import com.nametagedit.plugin.api.data.Nametag;
 import com.uhmily.scovilleplugin.GUI.BaseGUI;
 import com.uhmily.scovilleplugin.GUI.Inventories.CosmeticInventory;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.ItemHelper;
-import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import com.uhmily.scovilleplugin.Types.WinMessage.ModifiedWinMessage;
 import com.uhmily.scovilleplugin.Types.WinMessage.WinMessage;
-import me.libraryaddict.disguise.DisguiseAPI;
-import me.libraryaddict.disguise.disguisetypes.Disguise;
-import me.libraryaddict.disguise.disguisetypes.DisguiseType;
-import me.libraryaddict.disguise.disguisetypes.MobDisguise;
-import me.libraryaddict.disguise.disguisetypes.PlayerDisguise;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,9 +14,6 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
-import java.util.UUID;
 
 public class WinMessageInventory extends BaseGUI {
 

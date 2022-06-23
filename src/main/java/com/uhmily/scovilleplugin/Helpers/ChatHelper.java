@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class ChatHelper {
 
@@ -77,7 +76,7 @@ public class ChatHelper {
      * @return The formatted string.
      */
     public static String format(String key, UUID p, String... args) {
-        return format(key, Objects.requireNonNull(ScovillePlayer.getPlayer(p)), args);
+        return format(key, Objects.requireNonNull(ScovillePlayer.getPlayer(p)), (Object[])args);
     }
 
     public static String[] formatArray(String key, Player p, Object... args) {

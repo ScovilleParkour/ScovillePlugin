@@ -39,10 +39,6 @@ public class Song {
         this.tempo = song.tempo;
     }
 
-    private Song(String songStr) {
-        this(new File(FileHelper.getFolder("songs").getPath() +  File.separator + songStr + ".nbs"));
-    }
-
     private Song(File songFile) {
         try {
             int firstCustomIndex = 16;

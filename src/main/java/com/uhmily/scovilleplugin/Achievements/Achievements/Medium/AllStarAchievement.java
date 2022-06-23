@@ -12,7 +12,6 @@ import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.event.EventHandler;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 

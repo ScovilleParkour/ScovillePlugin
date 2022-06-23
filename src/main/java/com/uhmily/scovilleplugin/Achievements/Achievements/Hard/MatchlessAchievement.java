@@ -3,7 +3,6 @@ package com.uhmily.scovilleplugin.Achievements.Achievements.Hard;
 import com.uhmily.scovilleplugin.Achievements.Achievement;
 import com.uhmily.scovilleplugin.Achievements.AchievementDiff;
 import com.uhmily.scovilleplugin.Events.CheckpointCreamEvent;
-import com.uhmily.scovilleplugin.Events.CheckpointSignEvent;
 import com.uhmily.scovilleplugin.Events.CourseCompleteEvent;
 import com.uhmily.scovilleplugin.Events.CourseJoinEvent;
 import com.uhmily.scovilleplugin.Types.Course.Course;

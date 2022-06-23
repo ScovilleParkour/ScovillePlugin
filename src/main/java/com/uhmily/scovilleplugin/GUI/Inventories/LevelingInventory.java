@@ -139,6 +139,8 @@ public class LevelingInventory extends BaseGUI {
                 }
                 break;
             }
+            default:
+                break;
         }
     }
 

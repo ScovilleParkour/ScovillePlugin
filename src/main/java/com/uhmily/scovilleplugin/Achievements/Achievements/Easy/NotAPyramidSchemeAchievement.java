@@ -7,11 +7,6 @@ import com.uhmily.scovilleplugin.Types.Course.Course;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.player.PlayerInteractEvent;
-
-import java.util.Calendar;
-import java.util.UUID;
 
 public class NotAPyramidSchemeAchievement extends Achievement<CourseCompleteEvent> {
 

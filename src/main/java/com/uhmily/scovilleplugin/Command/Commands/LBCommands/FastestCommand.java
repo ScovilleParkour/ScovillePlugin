@@ -5,7 +5,6 @@ import com.uhmily.scovilleplugin.Command.Commands.LeaderboardCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
 import com.uhmily.scovilleplugin.Helpers.UUIDFetcher;
 import com.uhmily.scovilleplugin.Types.Course.Course;
-import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;

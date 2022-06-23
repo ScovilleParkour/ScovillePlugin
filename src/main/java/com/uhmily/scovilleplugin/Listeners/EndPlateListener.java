@@ -3,7 +3,6 @@ package com.uhmily.scovilleplugin.Listeners;
 import com.uhmily.scovilleplugin.ScovillePlugin;
 import com.uhmily.scovilleplugin.Types.Course.Course;
 import com.uhmily.scovilleplugin.Types.Course.CourseWLR;
-import com.uhmily.scovilleplugin.Types.Course.RankupCourse;
 import com.uhmily.scovilleplugin.Types.Plate.Plate;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
 import org.bukkit.Bukkit;

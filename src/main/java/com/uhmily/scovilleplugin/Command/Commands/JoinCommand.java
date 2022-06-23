@@ -2,20 +2,12 @@ package com.uhmily.scovilleplugin.Command.Commands;
 
 import com.uhmily.scovilleplugin.Command.BaseCommand;
 import com.uhmily.scovilleplugin.Helpers.ChatHelper;
-import com.uhmily.scovilleplugin.Items.HotbarItem;
 import com.uhmily.scovilleplugin.Types.Course.Course;
-import com.uhmily.scovilleplugin.Types.Course.CourseWLR;
 import com.uhmily.scovilleplugin.Types.Player.ScovillePlayer;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class JoinCommand extends BaseCommand {
