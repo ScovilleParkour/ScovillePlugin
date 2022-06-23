@@ -29,12 +29,12 @@ public class ItemListener implements Listener {
     @EventHandler
     public void onClick(PlayerInteractEvent e) {
 
+        if (!(e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK))) return;
         if (!e.getHand().equals(EquipmentSlot.HAND)) return;
 
         Player p = e.getPlayer();
         ItemStack heldItem = p.getInventory().getItemInMainHand();
 
-        if (!(e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK))) return;
         if (heldItem == null || heldItem.getType() == Material.AIR) return;
 
         NBTItem item = new NBTItem(heldItem);

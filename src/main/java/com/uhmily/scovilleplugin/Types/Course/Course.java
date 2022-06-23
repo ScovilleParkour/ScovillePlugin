@@ -178,12 +178,23 @@ public class Course extends ScovilleObject {
         p.sendMessage(ChatHelper.format("course_joined", p, this.coloredName));
     }
 
+    private Map.Entry<UUID, Long> getBestTime() {
+        return new AbstractMap.SimpleEntry<>(this.getLeaderboardTimes().entrySet().stream().min(Map.Entry.comparingByValue()).get());
+    }
+
+    private Map.Entry<UUID, Integer> getMostTimes() {
+        return ScovillePlayer.getPlayers().stream().map((player) -> new AbstractMap.SimpleEntry<>(player.getUuid(), player.getTimesCompleted(this.getUuid()))).max(Map.Entry.comparingByValue()).get();
+    }
+
     public void end(Player p) {
 
         ScovillePlayer player = ScovillePlayer.getPlayer(p);
         if (player == null) return;
         Long startTime = player.getStartTime(this.getUuid());
         Long totalTime = 0L;
+
+        Map.Entry<UUID, Long> oldBestTime = getBestTime();
+        Map.Entry<UUID, Integer> oldMostTimes = getMostTimes();
 
         if (startTime != null) {
             totalTime = Calendar.getInstance().getTimeInMillis() - startTime;
@@ -195,6 +206,8 @@ public class Course extends ScovilleObject {
         ModifiedWinMessage modifiedWinMessage = player.getWinMessage() == null ? new ModifiedWinMessage() : player.getWinMessage();
         if (startTime != null)
             modifiedWinMessage.setTime(true);
+        else
+            modifiedWinMessage.setTime(false);
         ChatHelper.broadcastMessage(modifiedWinMessage.toKey(), p.getName(), this.coloredName, player.getTimesCompleted(this.getUuid()), DurationFormatUtils.formatDurationHMS(totalTime));
 
         LevelManager.addXp(p, this);
@@ -208,19 +221,24 @@ public class Course extends ScovilleObject {
 
         ArrayList<UUID> uuidSet = new ArrayList<>(LuckPermsProvider.get().getUserManager().searchAll(NodeMatcher.key(Node.builder(DELUXE_TAG).build())).join().keySet());
         uuidSet.add(p.getUniqueId());
-        boolean hasTag = p.hasPermission(DELUXE_TAG);
 
-        Optional<Long> currWR = this.getLeaderboardTimes().values().stream().min(Long::compare);
-        Optional<Integer> currTimes = ScovillePlayer.getPlayers().stream().map(pl -> pl.getTimesCompleted(this.getUuid())).max(Integer::compare);
+        Map.Entry<UUID, Long> newBestTime = getBestTime();
+        Map.Entry<UUID, Integer> newMostTimes = getMostTimes();
+
+        System.out.println(oldBestTime);
+        System.out.println(oldMostTimes);
+        System.out.println(newBestTime);
+        System.out.println(newMostTimes);
 
         for (UUID userUUID : uuidSet) {
             User user = LuckPermsProvider.get().getUserManager().loadUser(userUUID).join();
-            ScovillePlayer scoUser = ScovillePlayer.getPlayer(userUUID);
-            boolean hasRecord = this.getLeaderboardTimes().containsKey(userUUID) && (!currWR.isPresent() || currWR.get().equals(this.getLeaderboardTimes().get(userUUID))) && (!currWR.isPresent() || Collections.frequency(this.leaderboardTimes.values(), currWR.get()) == 1);
-            boolean hasMost = scoUser != null && scoUser.getTimesCompleted().containsKey(this.getUuid()) && (!currTimes.isPresent() || currTimes.get().equals(scoUser.getTimesCompleted(this.getUuid()))) && (!currTimes.isPresent() || Collections.frequency(ScovillePlayer.getPlayers().stream().map(us -> us.getTimesCompleted(this.getUuid())).collect(Collectors.toCollection(ArrayList::new)), currTimes.get()) == 1);
+            boolean hasRecord = newBestTime.getKey().equals(userUUID);
+            boolean hasMost = newMostTimes.getKey().equals(userUUID);
             if (hasRecord || hasMost) {
+                System.out.println("Adding WR tag to " + UUIDFetcher.getName(userUUID));
                 user.data().add(Node.builder(DELUXE_TAG).build());
             } else {
+                System.out.println("Removing WR tag from " + UUIDFetcher.getName(userUUID));
                 user.data().remove(Node.builder(DELUXE_TAG).build());
                 String currTag = DeluxeTag.getPlayerTagIdentifier(userUUID.toString());
                 if (currTag != null && currTag.equals(wrTag)) {
@@ -231,8 +249,18 @@ public class Course extends ScovilleObject {
             LuckPermsProvider.get().getUserManager().saveUser(user);
         }
 
-        if (!hasTag && p.hasPermission(DELUXE_TAG)) {
-            ChatHelper.broadcastMessage("wr_achieved", p.getName(), this.getColoredName());
+        if (oldMostTimes != null && oldBestTime != null) {
+            if ((p.getUniqueId().equals(newBestTime.getKey()) && oldBestTime.getValue() != newBestTime.getValue()) || (p.getUniqueId().equals(newMostTimes.getKey()) && !p.getUniqueId().equals(oldMostTimes.getKey()))) {
+                ChatHelper.broadcastMessage("wr_achieved", p.getName(), this.getColoredName());
+            }
+        } else if (oldMostTimes == null && newMostTimes != null) {
+            if (newMostTimes.getKey().equals(p.getUniqueId())) {
+                ChatHelper.broadcastMessage("wr_achieved", p.getName(), this.getColoredName());
+            }
+        } else if (oldBestTime == null && newBestTime != null) {
+            if (newBestTime.getKey().equals(p.getUniqueId())) {
+                ChatHelper.broadcastMessage("wr_achieved", p.getName(), this.getColoredName());
+            }
         }
 
         Random random = new Random();
